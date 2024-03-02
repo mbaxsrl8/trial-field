@@ -9,8 +9,12 @@ spec:
     - name: management
       port: 7070
       targetPort: 7070
+      nodePort: 30070
   sessionAffinity: ClientIP
   sessionAffinityConfig:
       clientIP:
         timeoutSeconds: 10800
   type: LoadBalancer
+  externalIPs:
+  # your minikube ip -> minikube ip
+  - 192.168.49.2
